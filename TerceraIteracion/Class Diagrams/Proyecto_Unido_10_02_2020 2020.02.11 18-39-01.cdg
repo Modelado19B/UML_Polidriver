@@ -1,0 +1,1524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Proyecto_Unido_10_02_2020">
+  <ClassDiagramComponents>
+    <Class name="ControlLogeo" package="controlador" visibility="public" xPosition="148.0" yPosition="303.0">
+      <Fields>
+        <Field name="f" type="FormularioLogin" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="control_ingreso" returnType="JRadioButton" visibility="public">
+          <Argument type="JTextField" name="usuario"/>
+          <Argument type="JPasswordField" name="contrasena"/>
+          <Argument type="JFrame" name="login"/>
+          <Argument type="JRadioButton" name="pasajero"/>
+          <Argument type="JRadioButton" name="conductor"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ControlUsuarios" package="controlador" visibility="public" xPosition="348.0" yPosition="1388.0">
+      <Fields>
+        <Field name="PATTERN_EMAIL" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="ID" type="String" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="validar_email" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="email"/>
+        </Method>
+        <Method name="validar_letras" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="validar_campos_pasajero" returnType="JTextField" visibility="public">
+          <Argument type="JTextField" name="nombre"/>
+          <Argument type="JTextField" name="apellido"/>
+          <Argument type="JTextField" name="cedula"/>
+          <Argument type="JTextField" name="correo"/>
+        </Method>
+        <Method name="pintar_campos_pasajero" returnType="JLabel" visibility="public">
+          <Argument type="JTextField" name="nombre"/>
+          <Argument type="JTextField" name="apellido"/>
+          <Argument type="JTextField" name="cedula"/>
+          <Argument type="JTextField" name="correo"/>
+          <Argument type="JLabel" name="texto"/>
+        </Method>
+        <Method name="control_guardado_pasajero" returnType="String" visibility="public">
+          <Argument type="String" name="nombre1"/>
+          <Argument type="String" name="apellido1"/>
+          <Argument type="String" name="cedula1"/>
+          <Argument type="String" name="sexo1"/>
+          <Argument type="String" name="correo1"/>
+          <Argument type="String" name="fechanac"/>
+          <Argument type="String" name="Usuario1"/>
+          <Argument type="String" name="contrasena1"/>
+        </Method>
+        <Method name="control_guardadotarjeta" returnType="String" visibility="public">
+          <Argument type="String" name="cedula"/>
+          <Argument type="String" name="titular"/>
+          <Argument type="String" name="numero_tarjeta"/>
+          <Argument type="String" name="fechade_expi"/>
+        </Method>
+        <Method name="control_guardado_conductor" returnType="Date" visibility="public">
+          <Argument type="String" name="nombre1"/>
+          <Argument type="String" name="apellido1"/>
+          <Argument type="String" name="cedula1"/>
+          <Argument type="String" name="sexo1"/>
+          <Argument type="String" name="correo1"/>
+          <Argument type="String" name="fechanac"/>
+          <Argument type="String" name="Usuario1"/>
+          <Argument type="String" name="contrasena1"/>
+          <Argument type="String" name="tipo"/>
+          <Argument type="Date" name="fechali"/>
+        </Method>
+        <Method name="control_guardado_conductor_vehiculo" returnType="String" visibility="public">
+          <Argument type="String" name="cedula"/>
+          <Argument type="String" name="nombre1"/>
+          <Argument type="String" name="apellido1"/>
+          <Argument type="String" name="placa"/>
+          <Argument type="String" name="marca1"/>
+          <Argument type="String" name="modelo1"/>
+          <Argument type="String" name="color1"/>
+          <Argument type="String" name="asientos"/>
+        </Method>
+        <Method name="validar_campos_vehiculo" returnType="JTextField" visibility="public">
+          <Argument type="JTextField" name="Placa"/>
+          <Argument type="JTextField" name="Marca"/>
+          <Argument type="JTextField" name="modelo"/>
+          <Argument type="JTextField" name="color"/>
+        </Method>
+        <Method name="validar_cedula" returnType="String" visibility="public">
+          <Argument type="String" name="cedula"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Disponibilidad" package="controlador" visibility="public" xPosition="3862.0" yPosition="2625.0">
+      <Fields>
+        <Field name="viajeRaiz" type="Nodo" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Nodo" name="viajeRaiz"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="bajarDisponibilidad" returnType="int" visibility="public">
+          <Argument type="String" name="indiceViaje"/>
+          <Argument type="int" name="asientos"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Filtro" package="controlador" visibility="public" xPosition="2984.0" yPosition="4459.0">
+      <Fields>
+        <Field name="trs" type="TableRowSorter" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="filtrar" returnType="javax.swing.JRadioButton" visibility="public">
+          <Argument type="java.awt.event.KeyEvent" name="evt"/>
+          <Argument type="javax.swing.JTable" name="tablaViajes"/>
+          <Argument type="javax.swing.JTextField" name="JtxtFiltro"/>
+          <Argument type="DefaultTableModel" name="modelo"/>
+          <Argument type="javax.swing.JRadioButton" name="optOrigen"/>
+          <Argument type="javax.swing.JRadioButton" name="optDestino"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="LimitarCaracteres" package="controlador" visibility="public" xPosition="3862.0" yPosition="6813.0">
+      <Fields>
+        <Field name="texto" type="JTextField" visibility="private"/>
+        <Field name="numero" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="JTextField" name="texto"/>
+          <Argument type="int" name="numero"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="insertString" returnType="AttributeSet" visibility="public">
+          <Argument type="int" name="arg0"/>
+          <Argument type="String" name="arg1"/>
+          <Argument type="AttributeSet" name="arg2"/>
+        </Method>
+        <Method name="SNumeros" returnType="JTextField" visibility="public">
+          <Argument type="JTextField" name="a"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ListaViaje" package="controlador" visibility="public" xPosition="1689.0" yPosition="4459.0">
+      <Fields>
+        <Field name="raiz" type="Nodo" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Nodo" name="raiz"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setRaiz" returnType="Nodo" visibility="public">
+          <Argument type="Nodo" name="raiz"/>
+        </Method>
+        <Method name="getRaiz" returnType="Nodo" visibility="public"/>
+        <Method name="listaVacia" returnType="boolean" visibility="public"/>
+        <Method name="buscarViaje" returnType="String" visibility="public">
+          <Argument type="String" name="indiceViaje"/>
+        </Method>
+        <Method name="agregarViaje" returnType="DATOS_DEL_VIAJE" visibility="public">
+          <Argument type="DATOS_DEL_VIAJE" name="nuevo"/>
+        </Method>
+        <Method name="eliminarViaje" returnType="String" visibility="public">
+          <Argument type="String" name="dato"/>
+        </Method>
+        <Method name="listadoViajes" returnType="LinkedList&lt;DATOS_DEL_VIAJE&gt;" visibility="public"/>
+        <Method name="generarIndiceViaje" returnType="String" visibility="private"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Nodo" package="controlador" visibility="public" xPosition="833.0" yPosition="4459.0">
+      <Fields>
+        <Field name="viaje" type="DATOS_DEL_VIAJE" visibility="private"/>
+        <Field name="enlace" type="Nodo" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="DATOS_DEL_VIAJE" name="viaje"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="DATOS_DEL_VIAJE" name="viaje"/>
+          <Argument type="Nodo" name="enlace"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getViaje" returnType="DATOS_DEL_VIAJE" visibility="public"/>
+        <Method name="setVIaje" returnType="DATOS_DEL_VIAJE" visibility="public">
+          <Argument type="DATOS_DEL_VIAJE" name="viaje"/>
+        </Method>
+        <Method name="getEnlace" returnType="Nodo" visibility="public"/>
+        <Method name="setEnlace" returnType="Nodo" visibility="public">
+          <Argument type="Nodo" name="enlace"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Publicacion" package="controlador" visibility="public" xPosition="2180.0" yPosition="4459.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="renderizarTabla" returnType="JTable" visibility="public">
+          <Argument type="JTable" name="tablaViajes"/>
+        </Method>
+        <Method name="actualizarTabla" returnType="DefaultTableModel" visibility="public">
+          <Argument type="ListaViaje" name="listaViaje"/>
+          <Argument type="JTable" name="tablaViajes"/>
+          <Argument type="DefaultTableModel" name="modelo"/>
+        </Method>
+        <Method name="cargarTabla" returnType="DefaultTableModel" visibility="public">
+          <Argument type="JTable" name="tablaViajes"/>
+          <Argument type="DefaultTableModel" name="modelo"/>
+        </Method>
+        <Method name="cargarModelo" returnType="DefaultTableModel" visibility="public">
+          <Argument type="DefaultTableModel" name="modelo"/>
+        </Method>
+        <Method name="PrecioTotal" returnType="int" visibility="public">
+          <Argument type="int" name="precioUni"/>
+          <Argument type="int" name="numAsi"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Ejecutable" package="ejecutable" visibility="public" xPosition="1843.0" yPosition="431.0">
+      <Fields>
+        <Field name="p" type="VentanaPrincipal" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="String[]" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Archivos" package="modelo" visibility="public" xPosition="1689.0" yPosition="4876.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="guardarArchivo" returnType="ListaViaje" visibility="public">
+          <Argument type="ListaViaje" name="lista"/>
+        </Method>
+        <Method name="leerArchivo" returnType="ListaViaje" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ARCHIVOS_PLANOS" package="modelo" visibility="public" xPosition="5507.0" yPosition="5328.0">
+      <Fields>
+        <Field name="cedulaConductor" type="String" visibility="package"/>
+        <Field name="CedulaLogin" type="String" visibility="package"/>
+        <Field name="IdV" type="String" visibility="package"/>
+        <Field name="MatrizViaje" type="String" visibility="package"/>
+        <Field name="sc" type="Scanner" visibility="package"/>
+        <Field name="sv" type="Scanner" visibility="package"/>
+        <Field name="dv" type="Scanner" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getTotalAsientos" returnType="String" visibility="public"/>
+        <Method name="getCedulaLogin" returnType="String" visibility="public"/>
+        <Method name="setCedulaLogin" returnType="String" visibility="public">
+          <Argument type="String" name="CedulaLogin"/>
+        </Method>
+        <Method name="leerArchivo" returnType="String" visibility="public">
+          <Argument type="String" name="Cedula"/>
+        </Method>
+        <Method name="guardarrArchivo" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Conductor" package="modelo" visibility="public" xPosition="1473.0" yPosition="1741.0">
+      <Fields>
+        <Field name="t" type="Tarjeta" visibility="package"/>
+        <Field name="v" type="Vehiculo" visibility="package"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="fechali" type="Date" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="String" name="cedula"/>
+          <Argument type="String" name="sexo"/>
+          <Argument type="String" name="correo"/>
+          <Argument type="String" name="usuario"/>
+          <Argument type="String" name="contrasena"/>
+          <Argument type="String" name="tipoli"/>
+          <Argument type="String" name="fechanac"/>
+          <Argument type="Date" name="fechali"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="String" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getApellido" returnType="String" visibility="public"/>
+        <Method name="setApellido" returnType="String" visibility="public">
+          <Argument type="String" name="apellido"/>
+        </Method>
+        <Method name="getCedula" returnType="String" visibility="public"/>
+        <Method name="setCedula" returnType="String" visibility="public">
+          <Argument type="String" name="cedula"/>
+        </Method>
+        <Method name="getSexo" returnType="String" visibility="public"/>
+        <Method name="setSexo" returnType="String" visibility="public">
+          <Argument type="String" name="sexo"/>
+        </Method>
+        <Method name="getCorreo" returnType="String" visibility="public"/>
+        <Method name="setCorreo" returnType="String" visibility="public">
+          <Argument type="String" name="correo"/>
+        </Method>
+        <Method name="getUsuario" returnType="String" visibility="public"/>
+        <Method name="setUsuario" returnType="String" visibility="public">
+          <Argument type="String" name="usuario"/>
+        </Method>
+        <Method name="getContrasena" returnType="String" visibility="public"/>
+        <Method name="setContrasena" returnType="String" visibility="public">
+          <Argument type="String" name="contrasena"/>
+        </Method>
+        <Method name="getTipoli" returnType="String" visibility="public"/>
+        <Method name="setTipoli" returnType="String" visibility="public">
+          <Argument type="String" name="tipoli"/>
+        </Method>
+        <Method name="getFechanac" returnType="String" visibility="public"/>
+        <Method name="setFechanac" returnType="String" visibility="public">
+          <Argument type="String" name="fechanac"/>
+        </Method>
+        <Method name="getFechali" returnType="Date" visibility="public"/>
+        <Method name="setFechali" returnType="Date" visibility="public">
+          <Argument type="Date" name="fechali"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="aniadirArchivoConductores" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="data"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Cuenta" package="modelo" visibility="public" xPosition="2767.0" yPosition="6077.0">
+      <Fields>
+        <Field name="numero_cuenta" type="String" visibility="private"/>
+        <Field name="cvv" type="String" visibility="private"/>
+        <Field name="saldo" type="float" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="numero_cuenta"/>
+          <Argument type="String" name="cvv"/>
+          <Argument type="float" name="saldo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="debitar" returnType="float" visibility="public">
+          <Argument type="float" name="monto"/>
+        </Method>
+        <Method name="acreditar" returnType="float" visibility="public">
+          <Argument type="float" name="monto"/>
+        </Method>
+        <Method name="getNumero_cuenta" returnType="String" visibility="public"/>
+        <Method name="getCvv" returnType="String" visibility="public"/>
+        <Method name="getSaldo" returnType="float" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="DATOS_CONDUCTOR" package="modelo" visibility="public" xPosition="4491.0" yPosition="2625.0">
+      <Fields>
+        <Field name="cedulaConductor" type="String" visibility="private"/>
+        <Field name="id" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="cedulaConductor"/>
+          <Argument type="String" name="nombreConductor"/>
+          <Argument type="String" name="apellidoConductor"/>
+          <Argument type="String" name="totalAsientos"/>
+          <Argument type="String" name="tipoAuto"/>
+          <Argument type="String" name="placaVehiculo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="int" visibility="public"/>
+        <Method name="setId" returnType="int" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getCedulaConductor" returnType="String" visibility="public"/>
+        <Method name="setCedulaConductor" returnType="String" visibility="public">
+          <Argument type="String" name="cedulaConductor"/>
+        </Method>
+        <Method name="getNombreConductor" returnType="String" visibility="public"/>
+        <Method name="setNombreConductor" returnType="String" visibility="public">
+          <Argument type="String" name="nombreConductor"/>
+        </Method>
+        <Method name="getApellidoConductor" returnType="String" visibility="public"/>
+        <Method name="setApellidoConductor" returnType="String" visibility="public">
+          <Argument type="String" name="apellidoConductor"/>
+        </Method>
+        <Method name="getTotalAsientos" returnType="String" visibility="public"/>
+        <Method name="setTotalAsientos" returnType="String" visibility="public">
+          <Argument type="String" name="totalAsientos"/>
+        </Method>
+        <Method name="getTipoAuto" returnType="String" visibility="public"/>
+        <Method name="setTipoAuto" returnType="String" visibility="public">
+          <Argument type="String" name="tipoAuto"/>
+        </Method>
+        <Method name="getPlacaVehiculo" returnType="String" visibility="public"/>
+        <Method name="setPlacaVehiculo" returnType="String" visibility="public">
+          <Argument type="String" name="placaVehiculo"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="DATOS_DEL_VIAJE" package="modelo" visibility="public" xPosition="367.0" yPosition="2588.0">
+      <Fields>
+        <Field name="lugar_origen" type="String" visibility="private"/>
+        <Field name="lugar_destino" type="String" visibility="private"/>
+        <Field name="fecha" type="Date" visibility="private"/>
+        <Field name="hora_salida" type="String" visibility="private"/>
+        <Field name="hora_llegada" type="String" visibility="private"/>
+        <Field name="indiceViaje" type="String" visibility="private"/>
+        <Field name="total_asientos" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="indiceViaje"/>
+          <Argument type="String" name="ci_conductor"/>
+          <Argument type="String" name="conductor"/>
+          <Argument type="String" name="apellidoConductor"/>
+          <Argument type="int" name="total_asientos"/>
+          <Argument type="String" name="auto"/>
+          <Argument type="String" name="placa"/>
+          <Argument type="String" name="origen"/>
+          <Argument type="String" name="destino"/>
+          <Argument type="Date" name="fecha"/>
+          <Argument type="String" name="horaSalida"/>
+          <Argument type="String" name="horaLlegada"/>
+          <Argument type="int" name="precio"/>
+          <Argument type="int" name="disponibles"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="fechaClase" returnType="Date" visibility="public"/>
+        <Method name="getFecha" returnType="String" visibility="public"/>
+        <Method name="setFecha" returnType="Date" visibility="public">
+          <Argument type="Date" name="fecha"/>
+        </Method>
+        <Method name="getIndiceViaje" returnType="String" visibility="public"/>
+        <Method name="setIndiceViaje" returnType="String" visibility="public">
+          <Argument type="String" name="indiceViaje"/>
+        </Method>
+        <Method name="getConductor" returnType="String" visibility="public"/>
+        <Method name="setConductor" returnType="String" visibility="public">
+          <Argument type="String" name="conductor"/>
+        </Method>
+        <Method name="getApellidoConductor" returnType="String" visibility="public"/>
+        <Method name="setApellidoConductor" returnType="String" visibility="public">
+          <Argument type="String" name="apellidoConductor"/>
+        </Method>
+        <Method name="getCi_conductor" returnType="String" visibility="public"/>
+        <Method name="setCi_conductor" returnType="String" visibility="public">
+          <Argument type="String" name="ci_conductor"/>
+        </Method>
+        <Method name="getAuto" returnType="String" visibility="public"/>
+        <Method name="setAuto" returnType="String" visibility="public">
+          <Argument type="String" name="auto"/>
+        </Method>
+        <Method name="getPlaca" returnType="String" visibility="public"/>
+        <Method name="setPlaca" returnType="String" visibility="public">
+          <Argument type="String" name="placa"/>
+        </Method>
+        <Method name="getTotal_asientos" returnType="int" visibility="public"/>
+        <Method name="setTotal_asientos" returnType="int" visibility="public">
+          <Argument type="int" name="total_asientos"/>
+        </Method>
+        <Method name="getTotal_asientos_disponibles" returnType="int" visibility="public"/>
+        <Method name="setTotal_asientos_disponibles" returnType="int" visibility="public">
+          <Argument type="int" name="total_asientos_disponibles"/>
+        </Method>
+        <Method name="getPrecio" returnType="int" visibility="public"/>
+        <Method name="setPrecio" returnType="int" visibility="public">
+          <Argument type="int" name="precio"/>
+        </Method>
+        <Method name="getLugar_origen" returnType="String" visibility="public"/>
+        <Method name="setLugar_origen" returnType="String" visibility="public">
+          <Argument type="String" name="lugar_origen"/>
+        </Method>
+        <Method name="getLugar_destino" returnType="String" visibility="public"/>
+        <Method name="setLugar_destino" returnType="String" visibility="public">
+          <Argument type="String" name="lugar_destino"/>
+        </Method>
+        <Method name="getHora_salida" returnType="String" visibility="public"/>
+        <Method name="setHora_salida" returnType="String" visibility="public">
+          <Argument type="String" name="hora_salida"/>
+        </Method>
+        <Method name="getHora_llegada" returnType="String" visibility="public"/>
+        <Method name="setHora_llegada" returnType="String" visibility="public">
+          <Argument type="String" name="hora_llegada"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="setFecha" returnType="String" visibility="public">
+          <Argument type="String" name="fecha"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="DATOS_DISPONIBILIDAD" package="modelo" visibility="public" xPosition="3852.0" yPosition="2946.0">
+      <Fields>
+        <Field name="costo" type="String" visibility="private"/>
+        <Field name="disponiblidad" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getDisponiblidad" returnType="String" visibility="public"/>
+        <Method name="setDisponiblidad" returnType="String" visibility="public">
+          <Argument type="String" name="disponiblidad"/>
+        </Method>
+        <Method name="getCosto" returnType="String" visibility="public"/>
+        <Method name="setCosto" returnType="String" visibility="public">
+          <Argument type="String" name="costo"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="GeneraCuenta" package="modelo" visibility="public" xPosition="3289.0" yPosition="6125.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="generaCuentas" returnType="ArrayList" visibility="public"/>
+        <Method name="gurdaCuenta" returnType="ArrayList" visibility="public">
+          <Argument type="ArrayList" name="cuentasCredito"/>
+        </Method>
+        <Method name="genNumTarjetaCedula" returnType="String" visibility="public">
+          <Argument type="String" name="numCedula"/>
+        </Method>
+        <Method name="genNumTarjetaNombre" returnType="String" visibility="public">
+          <Argument type="String" name="nombreBuscar"/>
+        </Method>
+        <Method name="dataPasajero" returnType="String" visibility="public">
+          <Argument type="String" name="cedualPublicacion"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Lista" package="modelo" visibility="public" xPosition="5418.0" yPosition="4909.0">
+      <Fields>
+        <Field name="raiz" type="NodoConductor" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="NodoConductor" name="raiz"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setRaiz" returnType="NodoConductor" visibility="public">
+          <Argument type="NodoConductor" name="raiz"/>
+        </Method>
+        <Method name="getRaiz" returnType="NodoConductor" visibility="public"/>
+        <Method name="listaVacia" returnType="boolean" visibility="private"/>
+        <Method name="buscarConductor" returnType="String" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="agregarConductor" returnType="DATOS_CONDUCTOR" visibility="public">
+          <Argument type="DATOS_CONDUCTOR" name="nuevo"/>
+        </Method>
+        <Method name="listadoViajes" returnType="LinkedList&lt;DATOS_CONDUCTOR&gt;" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Logeo" package="modelo" visibility="public" xPosition="367.0" yPosition="103.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="credencialesConductores" returnType="String" visibility="public">
+          <Argument type="String" name="user"/>
+          <Argument type="String" name="pass"/>
+        </Method>
+        <Method name="credencialesPasajeros" returnType="String" visibility="public">
+          <Argument type="String" name="user"/>
+          <Argument type="String" name="pass"/>
+        </Method>
+        <Method name="ingresar_Sistema_Conductor" returnType="String" visibility="public">
+          <Argument type="String" name="usuario"/>
+          <Argument type="String" name="contrasena"/>
+        </Method>
+        <Method name="ingresar_Sistema_Pasajero" returnType="String" visibility="public">
+          <Argument type="String" name="usuario"/>
+          <Argument type="String" name="contrasena"/>
+        </Method>
+        <Method name="Pasajero" returnType="String" visibility="public">
+          <Argument type="String" name="user"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="NodoConductor" package="modelo" visibility="public" xPosition="4784.0" yPosition="4973.0">
+      <Fields>
+        <Field name="conductor" type="DATOS_CONDUCTOR" visibility="private"/>
+        <Field name="enlace" type="NodoConductor" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="DATOS_CONDUCTOR" name="viaje"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="DATOS_CONDUCTOR" name="viaje"/>
+          <Argument type="NodoConductor" name="enlace"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getViaje" returnType="DATOS_CONDUCTOR" visibility="public"/>
+        <Method name="setVIaje" returnType="DATOS_CONDUCTOR" visibility="public">
+          <Argument type="DATOS_CONDUCTOR" name="viaje"/>
+        </Method>
+        <Method name="getEnlace" returnType="NodoConductor" visibility="public"/>
+        <Method name="setEnlace" returnType="NodoConductor" visibility="public">
+          <Argument type="NodoConductor" name="enlace"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Pago" package="modelo" visibility="public" isAbstract="true" xPosition="2080.0" yPosition="6079.0">
+      <Fields>
+        <Field name="numCuentaConductor" type="String" visibility="private"/>
+        <Field name="numCuentaPasajero" type="String" visibility="private"/>
+        <Field name="numCuentaEmpresa" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="acreditar_cuenta" returnType="float" visibility="public">
+          <Argument type="String" name="numero_cuenta"/>
+          <Argument type="float" name="monto"/>
+        </Method>
+        <Method name="debitar_cuenta" returnType="float" visibility="public">
+          <Argument type="String" name="nÃºmero_cuenta"/>
+          <Argument type="String" name="cvv"/>
+          <Argument type="float" name="monto"/>
+        </Method>
+        <Method name="debitar_cuenta" returnType="float" visibility="public">
+          <Argument type="String" name="nÃºmero_cuenta"/>
+          <Argument type="float" name="monto"/>
+        </Method>
+        <Method name="notifica_pago_exitoso" returnType="void" visibility="public"/>
+        <Method name="notifica_cancelacion_exitosa" returnType="void" visibility="public"/>
+        <Method name="getNumCuentaEmpresa" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="PagoViaje" package="modelo" visibility="public" xPosition="2029.0" yPosition="6528.0">
+      <Fields>
+        <Field name="numCuentaEmpresa" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="pagar" returnType="String" visibility="public">
+          <Argument type="String" name="nomConductor"/>
+          <Argument type="String" name="cedulaPasajero"/>
+          <Argument type="int" name="montoString"/>
+          <Argument type="String" name="Cvv"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Pasajero" package="modelo" visibility="public" xPosition="3528.0" yPosition="1147.0">
+      <Fields>
+        <Field name="v" type="Vehiculo" visibility="package"/>
+        <Field name="t" type="Tarjeta" visibility="package"/>
+        <Field name="f" type="FormularioPasajero" visibility="package"/>
+        <Field name="nombre" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="String" name="cedula"/>
+          <Argument type="String" name="sexo"/>
+          <Argument type="String" name="correo"/>
+          <Argument type="String" name="usuario"/>
+          <Argument type="String" name="contrasena"/>
+          <Argument type="String" name="fechanac"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="String" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getApellido" returnType="String" visibility="public"/>
+        <Method name="setApellido" returnType="String" visibility="public">
+          <Argument type="String" name="apellido"/>
+        </Method>
+        <Method name="getCedula" returnType="String" visibility="public"/>
+        <Method name="setCedula" returnType="String" visibility="public">
+          <Argument type="String" name="cedula"/>
+        </Method>
+        <Method name="getSexo" returnType="String" visibility="public"/>
+        <Method name="setSexo" returnType="String" visibility="public">
+          <Argument type="String" name="sexo"/>
+        </Method>
+        <Method name="getCorreo" returnType="String" visibility="public"/>
+        <Method name="setCorreo" returnType="String" visibility="public">
+          <Argument type="String" name="correo"/>
+        </Method>
+        <Method name="getUsuario" returnType="String" visibility="public"/>
+        <Method name="setUsuario" returnType="String" visibility="public">
+          <Argument type="String" name="usuario"/>
+        </Method>
+        <Method name="getContrasena" returnType="String" visibility="public"/>
+        <Method name="setContrasena" returnType="String" visibility="public">
+          <Argument type="String" name="contrasena"/>
+        </Method>
+        <Method name="getFechanac" returnType="String" visibility="public"/>
+        <Method name="setFechanac" returnType="String" visibility="public">
+          <Argument type="String" name="fechanac"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="aniadirArchivoPasajero" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="data"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Tarjeta" package="modelo" visibility="public" xPosition="3603.0" yPosition="704.0">
+      <Fields>
+        <Field name="cedula" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="cedula"/>
+          <Argument type="String" name="titular"/>
+          <Argument type="String" name="numeroTarjeta"/>
+          <Argument type="String" name="fechaTarjeta"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setCedula" returnType="String" visibility="public">
+          <Argument type="String" name="cedula"/>
+        </Method>
+        <Method name="getCedula" returnType="String" visibility="public"/>
+        <Method name="getFechaTarjeta" returnType="String" visibility="public"/>
+        <Method name="getNumeroTarjeta" returnType="String" visibility="public"/>
+        <Method name="getTitular" returnType="String" visibility="public"/>
+        <Method name="setFechaTarjeta" returnType="String" visibility="public">
+          <Argument type="String" name="fechaTarjeta"/>
+        </Method>
+        <Method name="setNumeroTarjeta" returnType="String" visibility="public">
+          <Argument type="String" name="numeroTarjeta"/>
+        </Method>
+        <Method name="setTitular" returnType="String" visibility="public">
+          <Argument type="String" name="titular"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="aniadirArchivoTarjetas" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="data"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Vehiculo" package="modelo" visibility="public" xPosition="1610.0" yPosition="782.0">
+      <Fields>
+        <Field name="cedula" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="cedula"/>
+          <Argument type="String" name="titularv"/>
+          <Argument type="String" name="placa"/>
+          <Argument type="String" name="marca"/>
+          <Argument type="String" name="modelo"/>
+          <Argument type="String" name="color"/>
+          <Argument type="String" name="asientos"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getAsientos" returnType="String" visibility="public"/>
+        <Method name="getCedula" returnType="String" visibility="public"/>
+        <Method name="getColor" returnType="String" visibility="public"/>
+        <Method name="getMarca" returnType="String" visibility="public"/>
+        <Method name="getModelo" returnType="String" visibility="public"/>
+        <Method name="getPlaca" returnType="String" visibility="public"/>
+        <Method name="getTitularv" returnType="String" visibility="public"/>
+        <Method name="setAsientos" returnType="String" visibility="public">
+          <Argument type="String" name="asientos"/>
+        </Method>
+        <Method name="setCedula" returnType="String" visibility="public">
+          <Argument type="String" name="cedula"/>
+        </Method>
+        <Method name="setColor" returnType="String" visibility="public">
+          <Argument type="String" name="color"/>
+        </Method>
+        <Method name="setMarca" returnType="String" visibility="public">
+          <Argument type="String" name="marca"/>
+        </Method>
+        <Method name="setModelo" returnType="String" visibility="public">
+          <Argument type="String" name="modelo"/>
+        </Method>
+        <Method name="setPlaca" returnType="String" visibility="public">
+          <Argument type="String" name="placa"/>
+        </Method>
+        <Method name="setTitularv" returnType="String" visibility="public">
+          <Argument type="String" name="titularv"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="aniadirArchivoConductores_vehiculo" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="data"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ViajeTxt" package="modelo" visibility="public" xPosition="5061.0" yPosition="5318.0">
+      <Fields>
+        <Field name="cedulaConductor" type="String" visibility="package"/>
+        <Field name="nombreConductor" type="String" visibility="package"/>
+        <Field name="apellidoConductor" type="String" visibility="package"/>
+        <Field name="totalAsientos" type="String" visibility="package"/>
+        <Field name="tipoAuto" type="String" visibility="package"/>
+        <Field name="placaVehiculo" type="String" visibility="package"/>
+        <Field name="id" type="String" visibility="package"/>
+        <Field name="cuidadOrigen" type="String" visibility="package"/>
+        <Field name="cuidadDestino" type="String" visibility="package"/>
+        <Field name="fechaSalida" type="String" visibility="package"/>
+        <Field name="horaSalida" type="String" visibility="package"/>
+        <Field name="horaLlegada" type="String" visibility="package"/>
+        <Field name="precio" type="String" visibility="package"/>
+        <Field name="Asientos" type="String" visibility="package"/>
+        <Field name="viajeTxt" type="File" visibility="package"/>
+        <Field name="Base" type="File" visibility="package"/>
+        <Field name="Id" type="Random" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="listar" returnType="void" visibility="public"/>
+        <Method name="sobrescribir" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="FormularioConductor" package="vistas" visibility="public" xPosition="392.0" yPosition="1756.0">
+      <Fields>
+        <Field name="c" type="ControlUsuarios" visibility="package"/>
+        <Field name="apellido" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="cedula" type="javax.swing.JFormattedTextField" visibility="private"/>
+        <Field name="contrasena" type="javax.swing.JPasswordField" visibility="private"/>
+        <Field name="correo" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jDateChooser1" type="com.toedter.calendar.JDateChooser" visibility="private"/>
+        <Field name="jDateChooser2" type="com.toedter.calendar.JDateChooser" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel10" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel11" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel12" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel6" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel7" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel8" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel9" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel2" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel4" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="nombre" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="registrarse" type="javax.swing.JButton" visibility="private"/>
+        <Field name="regresar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="sexo" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="textocedula" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="tipo" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="usuario" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="validar" type="javax.swing.JButton" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre1"/>
+          <Argument type="String" name="apellido1"/>
+          <Argument type="String" name="cedula1"/>
+          <Argument type="String" name="sexo1"/>
+          <Argument type="String" name="correo1"/>
+          <Argument type="Date" name="fechanac"/>
+          <Argument type="String" name="Usuario1"/>
+          <Argument type="String" name="contrasena1"/>
+          <Argument type="String" name="tipo1"/>
+          <Argument type="Date" name="fechali"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="regresarActionPerformed" returnType="java.awt.event.ActionEvent" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="validarActionPerformed" returnType="java.awt.event.ActionEvent" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="registrarseActionPerformed" returnType="java.awt.event.ActionEvent" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="FormularioLogin" package="vistas" visibility="public" xPosition="1132.0" yPosition="103.0">
+      <Fields>
+        <Field name="conductor" type="javax.swing.JRadioButton" visibility="private"/>
+        <Field name="ingresar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel7" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel2" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel3" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel4" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="pasajero" type="javax.swing.JRadioButton" visibility="private"/>
+        <Field name="password" type="javax.swing.JPasswordField" visibility="private"/>
+        <Field name="regresar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="usuario" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="formWindowClosing" returnType="java.awt.event.WindowEvent" visibility="private">
+          <Argument type="java.awt.event.WindowEvent" name="evt"/>
+        </Method>
+        <Method name="ingresarActionPerformed" returnType="java.awt.event.ActionEvent" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="regresarActionPerformed" returnType="java.awt.event.ActionEvent" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="passwordActionPerformed" returnType="java.awt.event.ActionEvent" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="pasajeroActionPerformed" returnType="java.awt.event.ActionEvent" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="conductorActionPerformed" returnType="java.awt.event.ActionEvent" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="FormularioPasajero" package="vistas" visibility="public" xPosition="4425.0" yPosition="1197.0">
+      <Fields>
+        <Field name="c" type="ControlUsuarios" visibility="package"/>
+        <Field name="apellido" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="cedula" type="javax.swing.JFormattedTextField" visibility="private"/>
+        <Field name="contrasena" type="javax.swing.JPasswordField" visibility="private"/>
+        <Field name="correo" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jDateChooser1" type="com.toedter.calendar.JDateChooser" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel10" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel6" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel7" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel8" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel9" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel2" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="nombre" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="registrarse" type="javax.swing.JButton" visibility="private"/>
+        <Field name="regresar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="sexo" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="texto" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="usuario" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="validar" type="javax.swing.JButton" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre1"/>
+          <Argument type="String" name="apellido1"/>
+          <Argument type="String" name="cedula1"/>
+          <Argument type="String" name="sexo1"/>
+          <Argument type="String" name="correo1"/>
+          <Argument type="Date" name="fechanac"/>
+          <Argument type="String" name="Usuario1"/>
+          <Argument type="String" name="contrasena1"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="regresarActionPerformed" returnType="java.awt.event.ActionEvent" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="validarActionPerformed" returnType="java.awt.event.ActionEvent" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="registrarseActionPerformed" returnType="java.awt.event.ActionEvent" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="FormularioTarjeta" package="vistas" visibility="public" xPosition="2925.0" yPosition="122.0">
+      <Fields>
+        <Field name="t" type="Tarjeta" visibility="package"/>
+        <Field name="c" type="ControlUsuarios" visibility="package"/>
+        <Field name="nombre" type="String" visibility="package"/>
+        <Field name="fechanac" type="Date" visibility="package"/>
+        <Field name="TITULAR" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jMonthChooser1" type="com.toedter.calendar.JMonthChooser" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel2" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jYearChooser1" type="com.toedter.calendar.JYearChooser" visibility="private"/>
+        <Field name="numero" type="javax.swing.JFormattedTextField" visibility="private"/>
+        <Field name="registrarse" type="javax.swing.JButton" visibility="private"/>
+        <Field name="regresar" type="javax.swing.JButton" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="String" name="cedula1"/>
+          <Argument type="String" name="sexo"/>
+          <Argument type="String" name="correo"/>
+          <Argument type="Date" name="fechanac"/>
+          <Argument type="String" name="usuario"/>
+          <Argument type="String" name="contrasena"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="String" name="cedula1"/>
+          <Argument type="String" name="sexo"/>
+          <Argument type="String" name="correo"/>
+          <Argument type="Date" name="fechanac"/>
+          <Argument type="String" name="usuario"/>
+          <Argument type="String" name="contrasena"/>
+          <Argument type="String" name="tipo"/>
+          <Argument type="Date" name="fechali"/>
+          <Argument type="String" name="placa1"/>
+          <Argument type="String" name="marca1"/>
+          <Argument type="String" name="modelo1"/>
+          <Argument type="String" name="color1"/>
+          <Argument type="String" name="asientos1"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="regresarActionPerformed" returnType="java.awt.event.ActionEvent" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="registrarseActionPerformed" returnType="java.awt.event.ActionEvent" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="FormularioVehiculo" package="vistas" visibility="public" xPosition="19.0" yPosition="716.0">
+      <Fields>
+        <Field name="v" type="Vehiculo" visibility="package"/>
+        <Field name="c" type="ControlUsuarios" visibility="package"/>
+        <Field name="nombrec" type="String" visibility="package"/>
+        <Field name="fechanaci" type="Date" visibility="package"/>
+        <Field name="placat" type="String" visibility="package"/>
+        <Field name="asientos" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="colrcarro" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel2" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="marca" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="modelo" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="placa" type="javax.swing.JFormattedTextField" visibility="private"/>
+        <Field name="registrarse" type="javax.swing.JButton" visibility="private"/>
+        <Field name="regresar" type="javax.swing.JButton" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre1"/>
+          <Argument type="String" name="apellido1"/>
+          <Argument type="String" name="cedula1"/>
+          <Argument type="String" name="sexo1"/>
+          <Argument type="String" name="correo1"/>
+          <Argument type="Date" name="fechanac"/>
+          <Argument type="String" name="Usuario1"/>
+          <Argument type="String" name="contrasena1"/>
+          <Argument type="String" name="tipo1"/>
+          <Argument type="Date" name="fechali"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre1"/>
+          <Argument type="String" name="apellido1"/>
+          <Argument type="String" name="cedula1"/>
+          <Argument type="String" name="sexo1"/>
+          <Argument type="String" name="correo1"/>
+          <Argument type="Date" name="fechanac"/>
+          <Argument type="String" name="Usuario1"/>
+          <Argument type="String" name="contrasena1"/>
+          <Argument type="String" name="tipo1"/>
+          <Argument type="Date" name="fechali"/>
+          <Argument type="String" name="placa1"/>
+          <Argument type="String" name="marca1"/>
+          <Argument type="String" name="modelo1"/>
+          <Argument type="String" name="color1"/>
+          <Argument type="String" name="num1"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="placa1"/>
+          <Argument type="String" name="marca1"/>
+          <Argument type="String" name="modelo1"/>
+          <Argument type="String" name="color1"/>
+          <Argument type="String" name="num1"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="regresarActionPerformed" returnType="java.awt.event.ActionEvent" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="registrarseActionPerformed" returnType="java.awt.event.ActionEvent" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="FormularioPago" package="vistas" visibility="public" xPosition="2767.0" yPosition="6528.0">
+      <Fields>
+        <Field name="limitarCaracteres" type="LimitarCaracteres" visibility="package"/>
+        <Field name="Cvv" type="String" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="cedula" type="String" visibility="private"/>
+        <Field name="monto" type="int" visibility="private"/>
+        <Field name="pasajero" type="Pasajero" visibility="package"/>
+        <Field name="estadoPago" type="boolean" visibility="private"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel7" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel8" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabelApellido" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabelCedula" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabelCorreo" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabelCuenta" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabelNombre" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jTextFieldCvv" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="java.awt.Frame" name="parent"/>
+          <Argument type="boolean" name="modal"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setDatos" returnType="String" visibility="public">
+          <Argument type="Pasajero" name="pasajero"/>
+          <Argument type="int" name="precio"/>
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="setDatosPasajero" returnType="int" visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="cedula"/>
+          <Argument type="int" name="monto"/>
+        </Method>
+        <Method name="limitar" returnType="void" visibility="public"/>
+        <Method name="configurar" returnType="void" visibility="public"/>
+        <Method name="getCvv" returnType="String" visibility="public"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="jButton1ActionPerformed" returnType="java.awt.event.ActionEvent" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton2ActionPerformed" returnType="java.awt.event.ActionEvent" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="estado" returnType="boolean" visibility="public"/>
+        <Method name="jTextFieldCvvActionPerformed" returnType="java.awt.event.ActionEvent" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="FORMULARIO_VIAJE1" package="vistas" visibility="public" xPosition="2029.0" yPosition="2588.0">
+      <Fields>
+        <Field name="example" type="Ruta" visibility="package" isFinal="true"/>
+        <Field name="distancia" type="float" visibility="package"/>
+        <Field name="tiempo" type="float" visibility="package"/>
+        <Field name="monto" type="float" visibility="package"/>
+        <Field name="gananciaPolidriver" type="float" visibility="package"/>
+        <Field name="horas" type="int" visibility="package"/>
+        <Field name="tiempoTotal" type="String" visibility="package"/>
+        <Field name="obj" type="ARCHIVOS_PLANOS" visibility="package"/>
+        <Field name="DATA" type="DATOS_DISPONIBILIDAD" visibility="package"/>
+        <Field name="FormaFecha" type="SimpleDateFormat" visibility="package"/>
+        <Field name="CD" type="DATOS_DISPONIBILIDAD" visibility="package"/>
+        <Field name="ImagenAsientos" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="cerrar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButtonCalcularRuta" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButtonCrearViaje" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jComboBoxCiudadDestino" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jComboBoxCiudadOrigen" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jComboBoxHoraSalida" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jComboBoxMinutosSalida" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jDateChooserSalida" type="com.toedter.calendar.JDateChooser" visibility="private"/>
+        <Field name="jLabelAsientos" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabelCiudadDestino" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabelCiudadOrigen" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabelCosto" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabelCostoEstimado" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabelDAtosViaje" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabelDistancia" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabelFechaDalida" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabelFechaViaje" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabelGanacias" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabelHoraSalida" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabelImagenDinero" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabelLogo" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabelMinutosSalida" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabelPuntosViaje" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabelTiempoEstimado" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel2" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanelDisponibilidad" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanelViaje" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jTextFieldAsientos" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextFieldCosto" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextFieldCostoEstimado" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextFieldDistancia" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextFieldGananciaPolidriver" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextFieldTiempoEstimado" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="jButtonCrearViajeActionPerformed" returnType="java.awt.event.ActionEvent" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButtonCalcularRutaActionPerformed" returnType="java.awt.event.ActionEvent" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton1ActionPerformed" returnType="java.awt.event.ActionEvent" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="activarElementos" returnType="void" visibility="public"/>
+        <Method name="cerrarActionPerformed" returnType="java.awt.event.ActionEvent" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="llenarTablaViaje" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Ruta" package="vistas" visibility="public" xPosition="2168.0" yPosition="3863.0">
+      <Fields>
+        <Field name="map" type="Map" visibility="public" isStatic="true"/>
+        <Field name="settingsCircle" type="CircleOptions" visibility="public"/>
+        <Field name="settingsLine" type="PolylineOptions" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="pString"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="generateMarker" returnType="LatLng" visibility="public">
+          <Argument type="LatLng" name="pos"/>
+        </Method>
+        <Method name="muestraContenido" returnType="String" visibility="public">
+          <Argument type="String" name="archivo"/>
+        </Method>
+        <Method name="generarRuta" returnType="Boolean" visibility="public">
+          <Argument type="LatLng" name="start"/>
+          <Argument type="LatLng" name="end"/>
+          <Argument type="Boolean" name="markers"/>
+        </Method>
+        <Method name="calcularDistancia" returnType="LatLng" visibility="public">
+          <Argument type="LatLng" name="a"/>
+          <Argument type="LatLng" name="b"/>
+        </Method>
+        <Method name="calcularTiempo" returnType="float" visibility="public">
+          <Argument type="float" name="distancia"/>
+        </Method>
+        <Method name="calcularGananciaAPP" returnType="float" visibility="public">
+          <Argument type="float" name="distancia"/>
+        </Method>
+        <Method name="calcularMonto" returnType="float" visibility="public">
+          <Argument type="float" name="distancia"/>
+          <Argument type="float" name="ganancia"/>
+        </Method>
+        <Method name="formatearMinutosAHoraMinuto" returnType="int" visibility="public">
+          <Argument type="int" name="tiempo"/>
+        </Method>
+        <Method name="darMap" returnType="Map" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="VentanaPrincipal" package="vistas" visibility="public" xPosition="2180.0" yPosition="236.0">
+      <Fields>
+        <Field name="fl" type="FormularioLogin" visibility="package"/>
+        <Field name="inciar_sesion" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel2" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel3" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="registrarse" type="javax.swing.JToggleButton" visibility="private"/>
+        <Field name="tipo" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="tipoActionPerformed" returnType="java.awt.event.ActionEvent" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="inciar_sesionActionPerformed" returnType="java.awt.event.ActionEvent" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="registrarseActionPerformed" returnType="java.awt.event.ActionEvent" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="formWindowClosing" returnType="java.awt.event.WindowEvent" visibility="private">
+          <Argument type="java.awt.event.WindowEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="VentanaPublicacion" package="vistas" visibility="public" xPosition="815.0" yPosition="4849.0">
+      <Fields>
+        <Field name="modelo" type="DefaultTableModel" visibility="package"/>
+        <Field name="verViaje" type="VentanaViaje" visibility="package"/>
+        <Field name="listaViaje" type="ListaViaje" visibility="package"/>
+        <Field name="nombrePasajero" type="String" visibility="package"/>
+        <Field name="cedulaPasajero" type="String" visibility="package"/>
+        <Field name="pasajero" type="Pasajero" visibility="package"/>
+        <Field name="publicacion" type="Publicacion" visibility="package"/>
+        <Field name="archivos" type="Archivos" visibility="package"/>
+        <Field name="filtro" type="Filtro" visibility="package"/>
+        <Field name="GrupoFiltro" type="javax.swing.ButtonGroup" visibility="private"/>
+        <Field name="JtxtFiltro" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="botonCancelar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="botonVerViaje" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel6" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel2" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel3" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel4" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel5" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel6" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel7" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel8" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jScrollPane2" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="optDestino" type="javax.swing.JRadioButton" visibility="private"/>
+        <Field name="optFecha" type="javax.swing.JRadioButton" visibility="private"/>
+        <Field name="optOrigen" type="javax.swing.JRadioButton" visibility="private"/>
+        <Field name="tablaViajes" type="javax.swing.JTable" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Pasajero" name="pasajero"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="botonCancelarActionPerformed" returnType="java.awt.event.ActionEvent" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="tablaViajesMouseReleased" returnType="java.awt.event.MouseEvent" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="botonVerViajeActionPerformed" returnType="java.awt.event.ActionEvent" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="JtxtFiltroKeyTyped" returnType="java.awt.event.KeyEvent" visibility="private">
+          <Argument type="java.awt.event.KeyEvent" name="evt"/>
+        </Method>
+        <Method name="optDestinoActionPerformed" returnType="java.awt.event.ActionEvent" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="optOrigenActionPerformed" returnType="java.awt.event.ActionEvent" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="JtxtFiltroActionPerformed" returnType="java.awt.event.ActionEvent" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="optFechaActionPerformed" returnType="java.awt.event.ActionEvent" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="VentanaViaje" package="vistas" visibility="public" isFinal="true" xPosition="2984.0" yPosition="4849.0">
+      <Fields>
+        <Field name="listaViaje" type="ListaViaje" visibility="package"/>
+        <Field name="disponibilidad" type="Disponibilidad" visibility="package"/>
+        <Field name="archivo" type="Archivos" visibility="package"/>
+        <Field name="indiceViaje" type="String" visibility="package"/>
+        <Field name="ventanaVi" type="VentanaPublicacion" visibility="package"/>
+        <Field name="cedula" type="String" visibility="package"/>
+        <Field name="precio" type="int" visibility="package"/>
+        <Field name="pasajero" type="Pasajero" visibility="package"/>
+        <Field name="publicacion" type="Publicacion" visibility="package"/>
+        <Field name="botonCancelar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="cedu_conductor" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel10" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel11" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel12" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel14" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel15" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel16" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel17" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel18" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel19" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel20" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel21" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel22" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel23" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel24" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel26" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel28" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel6" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel7" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel8" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel9" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel2" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel7" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel8" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="lblFecha" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="lblLlegada" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="lblSalida" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="txtNumAsi" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="java.awt.Frame" name="parent"/>
+          <Argument type="boolean" name="modal"/>
+          <Argument type="ListaViaje" name="listaViajes"/>
+          <Argument type="String" name="indiceViaje"/>
+          <Argument type="VentanaPublicacion" name="jfm"/>
+          <Argument type="Pasajero" name="pasajero"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="VerViaje" returnType="void" visibility="public"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="botonCancelarActionPerformed" returnType="java.awt.event.ActionEvent" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton1ActionPerformed" returnType="java.awt.event.ActionEvent" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="pagarViaje" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="viaje" source="controlador.Nodo" target="modelo.DATOS_DEL_VIAJE" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="v" source="modelo.Pasajero" target="modelo.Vehiculo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="listaViaje" source="vistas.VentanaPublicacion" target="controlador.ListaViaje" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ListaViaje"/>
+    <HasRelation name="v" source="modelo.Conductor" target="modelo.Vehiculo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="pasajero" source="vistas.VentanaPublicacion" target="modelo.Pasajero" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="controlador.Publicacion" target="modelo.Lista" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="conductor" source="modelo.NodoConductor" target="modelo.DATOS_CONDUCTOR" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="pasajero" source="vistas.FormularioPago" target="modelo.Pasajero" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="archivos" source="vistas.VentanaPublicacion" target="modelo.Archivos" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="p" source="ejecutable.Ejecutable" target="vistas.VentanaPrincipal" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="t" source="vistas.FormularioTarjeta" target="modelo.Tarjeta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="viajeRaiz" source="controlador.Disponibilidad" target="controlador.Nodo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Lista" target="modelo.NodoConductor" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="fl" source="vistas.VentanaPrincipal" target="vistas.FormularioLogin" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="t" source="modelo.Conductor" target="modelo.Tarjeta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="disponibilidad" source="vistas.VentanaViaje" target="controlador.Disponibilidad" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="verViaje" source="vistas.VentanaPublicacion" target="vistas.VentanaViaje" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="listaViaje" source="vistas.VentanaViaje" target="controlador.ListaViaje" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ListaViaje"/>
+    <HasRelation name="example" source="vistas.FORMULARIO_VIAJE1" target="vistas.Ruta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="c" source="vistas.FormularioVehiculo" target="controlador.ControlUsuarios" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="controlador.Nodo" target="modelo.DATOS_DEL_VIAJE" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="pasajero" source="vistas.VentanaViaje" target="modelo.Pasajero" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="t" source="modelo.Pasajero" target="modelo.Tarjeta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="CD" source="vistas.FORMULARIO_VIAJE1" target="modelo.DATOS_DISPONIBILIDAD" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="c" source="vistas.FormularioConductor" target="controlador.ControlUsuarios" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.ARCHIVOS_PLANOS" target="modelo.Lista" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Archivos" target="modelo.Lista" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="filtro" source="vistas.VentanaPublicacion" target="controlador.Filtro" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="modelo.PagoViaje" target="modelo.Pago"/>
+    <UseRelation source="modelo.NodoConductor" target="modelo.DATOS_CONDUCTOR" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="c" source="vistas.FormularioTarjeta" target="controlador.ControlUsuarios" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="publicacion" source="vistas.VentanaPublicacion" target="controlador.Publicacion" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="limitarCaracteres" source="vistas.FormularioPago" target="controlador.LimitarCaracteres" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="enlace" source="modelo.NodoConductor" target="modelo.NodoConductor" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="archivo" source="vistas.VentanaViaje" target="modelo.Archivos" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="f" source="modelo.Pasajero" target="vistas.FormularioPasajero" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="DATA" source="vistas.FORMULARIO_VIAJE1" target="modelo.DATOS_DISPONIBILIDAD" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="controlador.Nodo" target="controlador.Nodo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="c" source="vistas.FormularioPasajero" target="controlador.ControlUsuarios" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="publicacion" source="vistas.VentanaViaje" target="controlador.Publicacion" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="v" source="vistas.FormularioVehiculo" target="modelo.Vehiculo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="raiz" source="controlador.ListaViaje" target="controlador.Nodo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="obj" source="vistas.FORMULARIO_VIAJE1" target="modelo.ARCHIVOS_PLANOS" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="raiz" source="modelo.Lista" target="modelo.NodoConductor" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="formularioViaje" source="vistas.FormularioPago" target="modelo.PagoViaje" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="enlace" source="controlador.Nodo" target="controlador.Nodo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="vistas.FormularioPago" target="modelo.Pasajero" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Lista" target="modelo.DATOS_CONDUCTOR" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="cuenta" source="modelo.Pago" target="modelo.Cuenta" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="generaCuenta" source="modelo.GeneraCuenta" target="modelo.Cuenta" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Logeo" target="modelo.Pasajero" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="controlador.ListaViaje" target="modelo.DATOS_DEL_VIAJE" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.NodoConductor" target="modelo.NodoConductor" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="f" source="controlador.ControlLogeo" target="vistas.FormularioLogin" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="ventanaVi" source="vistas.VentanaViaje" target="vistas.VentanaPublicacion" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="controlador.ListaViaje" target="controlador.Nodo" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
